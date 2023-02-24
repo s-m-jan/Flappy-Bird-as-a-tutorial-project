@@ -165,6 +165,31 @@ let bird = {
     }
 }
 
+let pipes = {
+    dw : 53,
+    dh : 400,
+    maxYPos : -150,
+    
+    position : [],
+    draw : function(){
+        if (frames % 50) {
+            return
+        } else {
+            let currentY = this.maxYPos * (Math.random() + 1);
+        let currentpos = {
+            x : cvs.width,
+            y : currentY
+        }
+        
+        this.position.push(currentpos);
+        ctx.drawImage(GreenPipe, currentpos.x , currentpos.y, this.dw, this.dh);
+        }
+        
+    }, 
+    
+
+    }
+
 
 function draw(){
     bg.draw();
